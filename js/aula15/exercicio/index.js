@@ -7,13 +7,16 @@ Arredondando para cima: [Output]
 Arredondando para baixo: [Output]
 Com duas casas decimais: [Output]
 */
-const numero = prompt('Digite um número:');
+const numero = Number(prompt('Digite um número:'));
+const numeroTitulo = document.getElementById('numero-titulo');
+const texto = document.getElementById('texto');
+
 
 // Seu número é [Output]
-document.body.innerHTML = `<strong>Seu número é ${numero}</strong><br>`;
+numeroTitulo.innerHTML = numero;
 
 // Raiz quadrada: [Output]
-document.body.innerHTML += `Raiz quadrada: ${Math.sqrt(numero)}<br>`;
+texto.innerHTML = `Raiz quadrada: ${Math.sqrt(numero)}<br>`;
 
 // [Output] é inteiro? [Output] -> boolean
 document.body.innerHTML += `${numero} é inteiro? ${Number.isInteger(numero)}<br>`;
@@ -28,4 +31,4 @@ document.body.innerHTML += `Arredondando para cima: ${Math.ceil(numero)}<br>`;
 document.body.innerHTML += `Arredondando para baixo: ${Math.floor(numero)}<br>`;
 
 // Com duas casas decimais: [Output]
-document.body.innerHTML += `Com duas casas decimais: ${parseFloat(numero).toFixed(2)}<br>`;
+document.body.innerHTML += `Com duas casas decimais: ${numero.toFixed(2)}<br>`;
